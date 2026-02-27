@@ -23,6 +23,11 @@ function SignUp() {
       return;
     }
 
+    if(!fullName.trim()){
+      setError("Full name is required");
+      return;
+    }
+
     //Javascript Validations
     if (!validateEmail(email)) {
       setError("Please enter a valid email address");
@@ -50,7 +55,7 @@ function SignUp() {
         </p>
 
         <form onSubmit={handleSignUp}>
-          <ProfilePhotoSeletor image={profilePic} setImage={setProfilePic} />
+          <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
               value={fullName}
